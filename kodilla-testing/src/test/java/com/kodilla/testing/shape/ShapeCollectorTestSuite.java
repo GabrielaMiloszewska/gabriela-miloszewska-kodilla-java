@@ -30,12 +30,13 @@ public class ShapeCollectorTestSuite {
             //Given
             Square square = new Square();
             ShapeCollector shapeCollector = new ShapeCollector(square);
-
-            //When
             shapeCollector.addFigure(square);
 
+            //When
+            Shape expected = shapeCollector.getFigure(0);
+
             //Then
-            Assertions.assertEquals(square, shapeCollector.getFigure(0));
+            Assertions.assertEquals(square, expected);
         }
 
         @Test // Test 2: sprawdzający, czy lista jest pusta po usunięciu figury "kwadrat".
@@ -44,11 +45,13 @@ public class ShapeCollectorTestSuite {
             Square square = new Square();
             ShapeCollector shapeCollector = new ShapeCollector(square);
             shapeCollector.addFigure(square);
-            //When
             shapeCollector.removeFigure(square);
 
+            //When
+            int expected = shapeCollector.getListSize();
+
             //Then
-            Assertions.assertEquals(0, shapeCollector.getListSize());
+            Assertions.assertEquals(0, expected);
         }
 
         @Test // Test 3: sprawdzający, czy z kolekcji pobierana jest figura "kwadrat" z pozycji n listy.
@@ -59,10 +62,10 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(square);
 
             //When
-            shapeCollector.getFigure(0);
+            Shape expected = shapeCollector.getFigure(0);
 
             //Then
-            Assertions.assertEquals(square, shapeCollector.getFigure(0));
+            Assertions.assertEquals(square, expected);
         }
 
     }
@@ -75,12 +78,13 @@ public class ShapeCollectorTestSuite {
             //Given
             Circle circle = new Circle();
             ShapeCollector shapeCollector = new ShapeCollector(circle);
-
-            //When
             shapeCollector.addFigure(circle);
 
+            //When
+            Shape expected = shapeCollector.getFigure(0);
+
             //Then
-            Assertions.assertEquals(circle, shapeCollector.getFigure(0));
+            Assertions.assertEquals(circle, expected);
         }
 
         @Test // Test 2: sprawdzający, czy lista jest pusta po usunięciu figury "koło".
@@ -89,11 +93,13 @@ public class ShapeCollectorTestSuite {
             Circle circle = new Circle();
             ShapeCollector shapeCollector = new ShapeCollector(circle);
             shapeCollector.addFigure(circle);
-            //When
             shapeCollector.removeFigure(circle);
 
+            //When
+            int expected = shapeCollector.getListSize();
+
             //Then
-            Assertions.assertEquals(0, shapeCollector.getListSize());
+            Assertions.assertEquals(0, expected);
         }
 
         @Test // Test 3: sprawdzający, czy z kolekcji pobierana jest figura "koło" z pozycji n listy.
@@ -104,13 +110,14 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(circle);
 
             //When
-            shapeCollector.getFigure(0);
+            Shape expected = shapeCollector.getFigure(0);
 
             //Then
-            Assertions.assertEquals(circle, shapeCollector.getFigure(0));
+            Assertions.assertEquals(circle, expected);
         }
 
     }
+
     @Nested
     @DisplayName("Tests for rectangle")
     class TestRectangle {
@@ -119,12 +126,13 @@ public class ShapeCollectorTestSuite {
             //Given
             Rectangle rectangle = new Rectangle();
             ShapeCollector shapeCollector = new ShapeCollector(rectangle);
-
-            //When
             shapeCollector.addFigure(rectangle);
 
+            //When
+            Shape expected = shapeCollector.getFigure(0);
+
             //Then
-            Assertions.assertEquals(rectangle, shapeCollector.getFigure(0));
+            Assertions.assertEquals(rectangle, expected);
         }
 
         @Test // Test 2: sprawdzający, czy lista jest pusta po usunięciu figury "trójkąt".
@@ -133,11 +141,13 @@ public class ShapeCollectorTestSuite {
             Rectangle rectangle = new Rectangle();
             ShapeCollector shapeCollector = new ShapeCollector(rectangle);
             shapeCollector.addFigure(rectangle);
-            //When
             shapeCollector.removeFigure(rectangle);
 
+            //When
+            int expected = shapeCollector.getListSize();
+
             //Then
-            Assertions.assertEquals(0, shapeCollector.getListSize());
+            Assertions.assertEquals(0, expected);
         }
 
         @Test // Test 3: sprawdzający, czy z kolekcji pobierana jest figura "trójkąt" z pozycji n listy.
@@ -148,10 +158,10 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(rectangle);
 
             //When
-            shapeCollector.getFigure(0);
+            Shape expected = shapeCollector.getFigure(0);
 
             //Then
-            Assertions.assertEquals(rectangle, shapeCollector.getFigure(0));
+            Assertions.assertEquals(rectangle, expected);
         }
 
     }
