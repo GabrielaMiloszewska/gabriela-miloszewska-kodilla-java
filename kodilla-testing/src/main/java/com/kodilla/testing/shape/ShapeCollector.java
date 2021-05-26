@@ -5,24 +5,18 @@ import java.util.List;
 
 public class ShapeCollector {
 
-    private Shape shape;
-    public ShapeCollector(Shape shape) {
-        this.shape = shape;
-    }
-
-    List<Shape> shapeList= new ArrayList<>();
+    List<Shape> shapeList = new ArrayList<>();
 
     public void addFigure(Shape shape) {
-        shapeList.add(this.shape);
+        shapeList.add(shape);
     }
 
     public void removeFigure(Shape shape) {
-        shapeList.remove(this.shape);
+        shapeList.remove(shape);
     }
 
     public Shape getFigure(int n) {
-        shapeList.get(n);
-        return shape;
+        return shapeList.get(n);
     }
 
     public void showFigures() {

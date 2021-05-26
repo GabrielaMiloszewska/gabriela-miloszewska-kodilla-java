@@ -29,7 +29,7 @@ public class ShapeCollectorTestSuite {
         void testAddFigure() {
             //Given
             Square square = new Square();
-            ShapeCollector shapeCollector = new ShapeCollector(square);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(square);
 
             //When
@@ -43,7 +43,7 @@ public class ShapeCollectorTestSuite {
         void testRemoveFigure() {
             //Given
             Square square = new Square();
-            ShapeCollector shapeCollector = new ShapeCollector(square);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(square);
             shapeCollector.removeFigure(square);
 
@@ -58,7 +58,7 @@ public class ShapeCollectorTestSuite {
         void testGetFigure() {
             //Given
             Square square = new Square();
-            ShapeCollector shapeCollector = new ShapeCollector(square);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(square);
 
             //When
@@ -77,7 +77,7 @@ public class ShapeCollectorTestSuite {
         void testAddFigure() {
             //Given
             Circle circle = new Circle();
-            ShapeCollector shapeCollector = new ShapeCollector(circle);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(circle);
 
             //When
@@ -91,7 +91,7 @@ public class ShapeCollectorTestSuite {
         void testRemoveFigure() {
             //Given
             Circle circle = new Circle();
-            ShapeCollector shapeCollector = new ShapeCollector(circle);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(circle);
             shapeCollector.removeFigure(circle);
 
@@ -106,7 +106,7 @@ public class ShapeCollectorTestSuite {
         void testGetFigure() {
             //Given
             Circle circle = new Circle();
-            ShapeCollector shapeCollector = new ShapeCollector(circle);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(circle);
 
             //When
@@ -125,7 +125,7 @@ public class ShapeCollectorTestSuite {
         void testAddFigure() {
             //Given
             Rectangle rectangle = new Rectangle();
-            ShapeCollector shapeCollector = new ShapeCollector(rectangle);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(rectangle);
 
             //When
@@ -139,7 +139,7 @@ public class ShapeCollectorTestSuite {
         void testRemoveFigure() {
             //Given
             Rectangle rectangle = new Rectangle();
-            ShapeCollector shapeCollector = new ShapeCollector(rectangle);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(rectangle);
             shapeCollector.removeFigure(rectangle);
 
@@ -154,7 +154,7 @@ public class ShapeCollectorTestSuite {
         void testGetFigure() {
             //Given
             Rectangle rectangle = new Rectangle();
-            ShapeCollector shapeCollector = new ShapeCollector(rectangle);
+            ShapeCollector shapeCollector = new ShapeCollector();
             shapeCollector.addFigure(rectangle);
 
             //When
@@ -173,14 +173,16 @@ public class ShapeCollectorTestSuite {
             // Test 4: sprawdzający, czy po dodaniu figur "kwadrat", "koło" i "trójkąt", nazwy figur zostaną zwrócone w postaci jednego Stringa.
         void testShowFigures() {
             //Given
-            ShapeCollector shapeCollector = new ShapeCollector(new Square());
-            ShapeCollector shapeCollector2 = new ShapeCollector(new Circle());
-            ShapeCollector shapeCollector3 = new ShapeCollector(new Rectangle());
+            Square square = new Square();
+            Circle circle = new Circle();
+            Rectangle rectangle = new Rectangle();
+            ShapeCollector shapeCollector = new ShapeCollector();
+            shapeCollector.addFigure(square);
+            shapeCollector.addFigure(circle);
+            shapeCollector.addFigure(rectangle);
 
             //When
             shapeCollector.showFigures();
-            shapeCollector2.showFigures();
-            shapeCollector3.showFigures();
 
             //Then test passed
         }
