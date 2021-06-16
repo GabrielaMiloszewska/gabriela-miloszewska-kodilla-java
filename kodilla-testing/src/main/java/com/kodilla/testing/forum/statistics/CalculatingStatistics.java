@@ -1,7 +1,6 @@
 package com.kodilla.testing.forum.statistics;
 
 public class CalculatingStatistics {
-    private Statistics statistics;
     private double numberOfUsers;
     private double numberOfPosts;
     private double numberOfComments;
@@ -10,7 +9,6 @@ public class CalculatingStatistics {
     private double averageNumberOfCommentsPerPost;
 
     public CalculatingStatistics(Statistics statistics) {
-        this.statistics = statistics;
     }
 
     public void calculateAdvStatistics(Statistics statistics) {
