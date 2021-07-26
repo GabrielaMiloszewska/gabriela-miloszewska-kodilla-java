@@ -9,9 +9,9 @@ public class LoggerTestSuite {
     void testGetLastLog() {
         //Given
         Logger logger = Logger.INSTANCE;
+        String lastLog = "the last log";
 
         //When
-        String lastLog = "the last log";
         logger.getLastLog();
 
         //Then
