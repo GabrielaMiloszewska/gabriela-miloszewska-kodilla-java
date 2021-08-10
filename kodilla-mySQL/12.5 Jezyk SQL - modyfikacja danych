@@ -1,0 +1,11 @@
+INSERT INTO POSTSS(USER_ID, BODY) VALUES (5, 'Hello! I am John, nice to meet you all!');
+COMMIT;
+
+UPDATE POSTSS
+SET BODY = 'To delete'
+WHERE ID = 6;
+COMMIT;
+
+DELETE FROM POSTSS
+WHERE ID = 6;
+COMMIT;
