@@ -4,15 +4,14 @@ import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import javax.transaction.Transactional;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+@Transactional
 @SpringBootTest
 class InvoiceDaoTestSuite {
 
@@ -45,6 +44,11 @@ class InvoiceDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        invoiceDao.deleteAll();
+        try {
+            invoiceDao.deleteById(id);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
+
 }
