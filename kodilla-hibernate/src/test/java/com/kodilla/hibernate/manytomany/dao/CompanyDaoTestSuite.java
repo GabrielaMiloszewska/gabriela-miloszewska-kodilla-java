@@ -15,7 +15,6 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
-
     @Autowired
     private EmployeeDao employeeDao;
 
@@ -73,26 +72,17 @@ class CompanyDaoTestSuite {
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
         employeeDao.save(johnSmith);
-        int johnSmithId = johnSmith.getId();
         employeeDao.save(stephanieClarckson);
-        int stephanieClarcksonId = stephanieClarckson.getId();
         employeeDao.save(lindaKovalsky);
-        int lindaKovalskyId = lindaKovalsky.getId();
 
         //When
         List<Employee> employeeList = employeeDao.retrieveEmployeeByLastName("Clarckson");
 
         //Then
-        assertEquals(1, employeeList.size());
+        assertEquals("Clarckson", employeeList.get(0).getLastname());
 
         //CleanUp
-        try {
-            employeeDao.deleteById(johnSmithId);
-            employeeDao.deleteById(stephanieClarcksonId);
-            employeeDao.deleteById(lindaKovalskyId);
-        } catch (Exception e) {
-            //do nothing
-        }
+        employeeDao.deleteAll();
     }
 
     @Test
@@ -103,25 +93,16 @@ class CompanyDaoTestSuite {
         Company greyMatter = new Company("Grey Matter");
 
         companyDao.save(softwareMachine);
-        int softwareMachineId = softwareMachine.getId();
         companyDao.save(dataMaesters);
-        int dataMaestersId = dataMaesters.getId();
         companyDao.save(greyMatter);
-        int greyMatterId = greyMatter.getId();
 
         //When
         List<Company> companyList = companyDao.retrieveCompanyByFirstThreeCharacters("Gre");
 
         //Then
-        assertEquals(1, companyList.size());
+        assertEquals("Grey Matter", companyList.get(0).getName());
 
         //CleanUp
-        try {
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(greyMatterId);
-            companyDao.deleteById(dataMaestersId);
-        } catch (Exception e) {
-            //do nothing
-        }
+        employeeDao.deleteAll();
     }
 }
