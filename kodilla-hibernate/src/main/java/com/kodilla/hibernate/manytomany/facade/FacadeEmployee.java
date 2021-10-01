@@ -3,16 +3,16 @@ package com.kodilla.hibernate.manytomany.facade;
 import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Repository
+@Service
 public class FacadeEmployee {
     @Autowired
-    EmployeeDao employeeDao;
+    private EmployeeDao employeeDao;
 
-    List<Employee> retrieveEmployeeByFragmentOfTheName(String letters) throws EmployeeException {
-        return employeeDao.retrieveEmployeeByPartOfTheName();
+    public List<Employee> retrieveEmployeeByFragmentOfTheName(String letters) throws EmployeeException {
+        return employeeDao.retrieveEmployeeByPartOfTheName(letters);
     }
 }

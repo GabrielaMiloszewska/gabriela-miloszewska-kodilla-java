@@ -3,17 +3,17 @@ package com.kodilla.hibernate.manytomany.facade;
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Repository
+@Service
 public class FacadeCompany {
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
 
     public List<Company> retrieveCompanyByFragmentOfTheName(String letters) throws CompanyException {
-        return companyDao.retrieveCompanyByPartOfTheName();
+        return companyDao.retrieveCompanyByPartOfTheName(letters);
     }
 
 }
