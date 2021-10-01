@@ -65,7 +65,7 @@ class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testNamedQueriesEmployees(){
+    void testNamedQueriesEmployees(){
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -86,7 +86,7 @@ class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testNamedQueriesCompanies(){
+    void testNamedQueriesCompanies(){
         //Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");

@@ -12,7 +12,7 @@ import java.util.List;
         ),
         @NamedQuery(
         name ="Employee.retrieveEmployeeByPartOfTheName",
-        query = "FROM Employee WHERE lastname LIKE '%letters%'"
+        query = "FROM Employee WHERE lastname LIKE CONCAT('%', :LETTERS, '%')"
         )
 })
 

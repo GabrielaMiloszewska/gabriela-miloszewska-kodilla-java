@@ -5,12 +5,16 @@ import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
+@RunWith(SpringRunner.class)
 public class FacadeTestSuite {
     @Autowired
     private FacadeCompany facadeCompany;
@@ -33,7 +37,7 @@ public class FacadeTestSuite {
         employeeDao.save(lindaKovalsky);
 
         //When
-        List<Employee> expectedEmployee = facadeEmployee.retrieveEmployeeByFragmentOfTheName("ova");
+        List<Employee> expectedEmployee = facadeEmployee.retrieveEmployeeByFragmentOfTheName("vals");
 
         //Then
         assertEquals("Kovalsky", expectedEmployee.get(0).getLastname());
