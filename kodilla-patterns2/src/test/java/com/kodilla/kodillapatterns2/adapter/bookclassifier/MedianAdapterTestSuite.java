@@ -20,7 +20,7 @@ public class MedianAdapterTestSuite {
         Book book2 = new Book("Zaręba Dominika", "Katalonia. Barcelona, Costa Brava i Costa Dorada", 2018, "2");
         Book book3 = new Book("Murphy Joseph", "Potęga podświadomości", 2016, "3");
         Book book4 = new Book("Jerzy Sosnowski", "Wszystko zależy od przedimka", 2014, "4");
-        Book book5 = new Book("Jerzy Sosnowski", "Wszystko zależy od przedimka", 2015, "4");
+        Book book5 = new Book("Jerzy Sosnowski", "Wszystko zależy od przedimka", 2015, "5");
 
         Set<Book> bookSet = new HashSet<>();
         bookSet.add(book1);
