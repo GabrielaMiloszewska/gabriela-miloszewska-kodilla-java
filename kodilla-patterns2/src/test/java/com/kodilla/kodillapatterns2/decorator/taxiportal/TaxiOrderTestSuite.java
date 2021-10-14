@@ -92,10 +92,11 @@ class TaxiOrderTestSuite {
         theOrder = new UberNetworkOrderDecorator(theOrder);
         theOrder = new ChildSeatDecorator(theOrder);
         theOrder = new ChildSeatDecorator(theOrder);
+        System.out.println(theOrder.getDescription());
         //When
         String description = theOrder.getDescription();
         //Then
-        assertEquals("Drive a course by MyTaxi Network + child seat + child seat", description);
+        assertEquals("Drive a course by Uber Network + child seat + child seat", description);
     }
 
     @Test
@@ -110,7 +111,7 @@ class TaxiOrderTestSuite {
         //When
         BigDecimal theCost = theOrder.getCost();
         //Then
-        assertEquals(new BigDecimal(52), theCost);
+        assertEquals(new BigDecimal(57), theCost);
     }
 
     @Test
