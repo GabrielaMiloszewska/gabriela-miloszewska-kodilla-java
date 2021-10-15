@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public enum DbManager {
-
     INSTANCE;
-
     private Connection conn;
 
     DbManager() {
