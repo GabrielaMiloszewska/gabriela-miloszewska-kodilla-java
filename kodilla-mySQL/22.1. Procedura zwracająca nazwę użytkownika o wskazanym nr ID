@@ -1,0 +1,18 @@
+CREATE TABLE INFO (INFO varchar(20));
+
+INSERT INTO INFO(INFO)
+VALUES ('Incorrect reader ID');
+COMMIT;
+
+DROP PROCEDURE IF EXISTS DisplaySearchedReader;
+DELIMITER $$
+CREATE PROCEDURE DisplaySearchedReader(searchingReader INT(11))
+BEGIN
+    IF searchingReader <= 0 THEN
+SELECT * FROM INFO;
+ELSE
+SELECT READER_ID, FIRSTNAME, LASTNAME, PESELID FROM READERS WHERE READER_ID = searchingReader;
+END IF;
+END $$
+DELIMITER ;
+CALL DisplaySearchedReader(0);
