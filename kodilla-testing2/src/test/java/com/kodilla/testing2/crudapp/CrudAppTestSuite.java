@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 public class CrudAppTestSuite {
     public static final String BASE_URL = "https://gabrielamiloszewska.github.io/";
     private WebDriver driver;
@@ -55,10 +53,8 @@ public class CrudAppTestSuite {
 
         while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
 
-        driver.findElements(
-                        By.xpath("//form[@class=\"datatable__row\"]")).stream()
-                .filter(anyForm ->
-                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
+        driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
+                .filter(anyForm -> anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
                                 .getText().equals(taskName))
                 .forEach(theForm -> {
                     WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
